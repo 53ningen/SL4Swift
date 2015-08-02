@@ -6,7 +6,7 @@ class LoggerTest: XCTestCase {
     func testExample() {
         let logger = LoggerFactory.getLogger(.INFO)
         logger.info("logger test")
-        logger.trace("hogehogehohgeu")
+        logger.trace("hoge")
         XCTAssert(true, "Pass")
     }
     
