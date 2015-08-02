@@ -1,4 +1,4 @@
-@version = "0.0.2"
+@version = "0.0.3"
 Pod::Spec.new do |s|
   s.name         = "SL4Swift"
   s.version      = @version
@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/53ningen/SL4Swift.git", :tag => @version }
   s.source_files = 'SL4Swift/**/*.{swift}'
   s.requires_arc = true
-  s.ios.deployment_target = '6.0'
+  s.ios.deployment_target = '8.0'
 end
 
