@@ -2,15 +2,15 @@ import Foundation
 
 public class Logger {
     
-    typealias Writer = (logLevel: LogLevel, string: String, file: String, function: String, line: Int) -> Void
+    typealias Writer = (logLevel: LogLevel, string: String, file: String, line: Int, function: String) -> Void
     
     private let logLevel: LogLevel
     private let writer: Writer
 
-    internal static let defaultFormat: String = "[%@] %@(%@:%d) - %@"
+    internal static let defaultFormat: String = "[%@] %@:%d <%@> - %@"
     internal static let defaultWriter: (format: String) -> Writer = { (format: String) in {
-        (logLevel: LogLevel, string: String, file: String, function: String, line: Int) in
-        NSLog(format, logLevel.displayName, file, function, line, string)
+        (logLevel: LogLevel, string: String, file: String, line: Int, function: String) in
+        NSLog(format, logLevel.displayName, file, line, function, string)
         }
     }
     
@@ -143,7 +143,7 @@ public class Logger {
     
     private func write(logLevel: LogLevel, string: String, file: String, function: String, line: Int) {
         if isEnabled(logLevel) {
-            writer(logLevel: logLevel, string: string, file: file, function: function, line: line)
+            writer(logLevel: logLevel, string: string, file: file, line: line, function: function)
         }
     }
     
