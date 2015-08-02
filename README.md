@@ -29,3 +29,11 @@ logger.trace("hoge")        //=> do nothing(loglevel = .INFO)
 * info
 * warn
 * error
+
+## Install
+
+use CocoaPods
+
+```
+pod 'SL4Swift'
+```
