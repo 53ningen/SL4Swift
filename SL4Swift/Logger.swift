@@ -28,103 +28,103 @@ public class Logger {
     }
     
     public func isTraceEnabled() -> Bool {
-        return logLevel.level >= LogLevel.TRACE.level
+        return logLevel.level >= LogLevel.Trace.level
     }
     
     public func trace(msg: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
-        write(.TRACE, string: msg, file: file, function: function, line: line)
+        write(.Trace, string: msg, file: file, function: function, line: line)
     }
     
     public func trace(format: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__, arg: [NSObject]) {
-        write(.TRACE, format: format, file: file, function: function, line: line, objects: arg)
+        write(.Trace, format: format, file: file, function: function, line: line, objects: arg)
     }
     
     public func trace(format: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__, arg: [() -> NSObject]) {
-        write(LogLevel.TRACE, format: format, file: file, function: function, line: line, arg: arg)
+        write(LogLevel.Trace, format: format, file: file, function: function, line: line, arg: arg)
     }
     
     public func trace(msg: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__, e: NSError) {
-        write(.TRACE, msg: msg, e: e, file: file, function: function, line: line)
+        write(.Trace, msg: msg, e: e, file: file, function: function, line: line)
     }
     
     public func isDebugEnabled() -> Bool {
-        return isTraceEnabled() || logLevel == .DEBUG
+        return isTraceEnabled() || logLevel == .Debug
     }
     
     public func debug(msg: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
-        write(.DEBUG, string: msg, file: file, function: function, line: line)
+        write(.Debug, string: msg, file: file, function: function, line: line)
     }
     
     public func debug(format: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__, arg: [NSObject]) {
-        write(.DEBUG, format: format, file: file, function: function, line: line, objects: arg)
+        write(.Debug, format: format, file: file, function: function, line: line, objects: arg)
     }
     
     public func debug(format: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__, arg: [() -> NSObject]) {
-        write(LogLevel.DEBUG, format: format, file: file, function: function, line: line, arg: arg)
+        write(LogLevel.Debug, format: format, file: file, function: function, line: line, arg: arg)
     }
     
     public func debug(msg: String, e: NSError, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
-        write(.DEBUG, msg: msg, e: e, file: file, function: function, line: line)
+        write(.Debug, msg: msg, e: e, file: file, function: function, line: line)
     }
     
     public func isInfoEnabled() -> Bool {
-        return isDebugEnabled() || logLevel == .INFO
+        return isDebugEnabled() || logLevel == .Info
     }
     
     public func info(msg: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
-        write(.INFO, string: msg, file: file, function: function, line: line)
+        write(.Info, string: msg, file: file, function: function, line: line)
     }
     
     public func info(format: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__, arg: [NSObject]) {
-        write(.INFO, format: format, file: file, function: function, line: line, objects: arg)
+        write(.Info, format: format, file: file, function: function, line: line, objects: arg)
     }
     
     public func info(format: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__, arg: [() -> NSObject]) {
-        write(LogLevel.INFO, format: format, file: file, function: function, line: line, arg: arg)
+        write(LogLevel.Info, format: format, file: file, function: function, line: line, arg: arg)
     }
     
     public func info(msg: String, e: NSError, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
-        write(.INFO, msg: msg, e: e, file: file, function: function, line: line)
+        write(.Info, msg: msg, e: e, file: file, function: function, line: line)
     }
     
     public func isWarnEnabled() -> Bool {
-        return isInfoEnabled() || logLevel == .WARN
+        return isInfoEnabled() || logLevel == .Warn
     }
     
     public func warn(msg: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
-        write(.WARN, string: msg, file: file, function: function, line: line)
+        write(.Warn, string: msg, file: file, function: function, line: line)
     }
     
     public func warn(format: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__, arg: [NSObject]) {
-        write(.WARN, format: format, file: file, function: function, line: line, objects: arg)
+        write(.Warn, format: format, file: file, function: function, line: line, objects: arg)
     }
     
     public func warn(format: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__, arg: [() -> NSObject]) {
-        write(LogLevel.WARN, format: format, file: file, function: function, line: line, arg: arg)
+        write(LogLevel.Warn, format: format, file: file, function: function, line: line, arg: arg)
     }
     
     public func warn(msg: String, e: NSError, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
-        write(.WARN, msg: msg, e: e, file: file, function: function, line: line)
+        write(.Warn, msg: msg, e: e, file: file, function: function, line: line)
     }
     
     public func isErrorEnabled() -> Bool {
-        return isWarnEnabled() || logLevel == .ERROR
+        return isWarnEnabled() || logLevel == .Error
     }
     
     public func error(msg: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
-        write(.ERROR, string: msg, file: file, function: function, line: line)
+        write(.Error, string: msg, file: file, function: function, line: line)
     }
     
     public func error(format: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__, arg: [NSObject]) {
-        write(.ERROR, format: format, file: file, function: function, line: line, objects: arg)
+        write(.Error, format: format, file: file, function: function, line: line, objects: arg)
     }
     
     public func error(format: String, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__, arg: [() -> NSObject]) {
-        write(LogLevel.ERROR, format: format, file: file, function: function, line: line, arg: arg)
+        write(LogLevel.Error, format: format, file: file, function: function, line: line, arg: arg)
     }
     
     public func error(msg: String, e: NSError, file: String = __FILE__, function: String = __FUNCTION__, line: Int = __LINE__) {
-        write(.ERROR, msg: msg, e: e, file: file, function: function, line: line)
+        write(.Error, msg: msg, e: e, file: file, function: function, line: line)
     }
     
     private func write(logLevel: LogLevel, format: String, file: String, function: String, line: Int, objects: [NSObject]) {
